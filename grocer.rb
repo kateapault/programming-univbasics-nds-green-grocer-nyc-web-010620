@@ -55,7 +55,7 @@ def apply_coupons(cart, coupons)
       num_not_in_coupon = item[:count] % coupon[:num]
       
       items_with_coupon = {}
-      items_with_coupon[:item] = item[:item] + " W/ COUPON"
+      items_with_coupon[:item] = item[:item] + " W/COUPON"
       items_with_coupon[:price] = (coupon[:cost] / coupon[:num])
       items_with_coupon[:clearance] = item[:clearance]
       items_with_coupon[:count] = (item[:count] - num_not_in_coupon)
