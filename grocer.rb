@@ -70,8 +70,9 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  if cart[0]
-  cart = consolidate_cart(cart)
+  if cart[0][:count] == nil
+    cart = consolidate_cart(cart)
+  end
   for item in cart do
     if item[:clearance]
       item[:price] = (item[:price] * 0.8).round(2)
