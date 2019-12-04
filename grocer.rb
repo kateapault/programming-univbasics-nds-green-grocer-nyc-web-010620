@@ -83,7 +83,7 @@ def checkout(cart, coupons)
   # INPUTS: AoH (cart)
   #         AoH (coupons)
   # OUTPUT: Float (cart total)
-  
+  print "original cart: #{cart}"
   consolidated_cart = consolidate_cart(cart)
   print "consilidated cart: "
   pp consolidated_cart
