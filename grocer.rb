@@ -80,14 +80,22 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # INPUTS: 
+  # INPUTS: AoH (cart)
+  #         AoH (coupons)
+  # OUTPUT: Float (cart total)
   
   consolidated_cart = consolidate_cart(cart)
-  applied_coupons = apply_coupons(consolidated_cart)
+  applied_coupons = apply_coupons(consolidated_cart, coupons)
   final_cart = apply_clearance(applied_coupons)
   
+  cart_total = 0
   
-  
+  for item in final_cart do
+    item_total = item[:price] * item[:count]
+    cart_total += item_total
+  end
+
+  cart_total  
 end
 
 test1cart = [{:item=>"AVOCADO", :price=>3.0, :clearance=>true, :count=>2}]
