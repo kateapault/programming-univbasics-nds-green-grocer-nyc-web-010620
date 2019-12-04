@@ -98,7 +98,7 @@ def checkout(cart, coupons)
   if cart_total > 100
     cart_total *= 0.9
   end
-  cart_total  
+  cart_total.round(2)
 end
 
 test1cart = [{:item=>"AVOCADO", :price=>3.0, :clearance=>true, :count=>2}]
