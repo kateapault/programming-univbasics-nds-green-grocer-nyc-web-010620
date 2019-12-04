@@ -44,10 +44,6 @@ def apply_coupons(cart, coupons)
   # returned cart should have both "item x count: 1" and "item w/ coupon count: 2" hashes
   
   coupon_updates = []
-  print "cart: "
-  pp cart
-  print "coupons: "
-  pp coupons
   
   for item in cart do
     coupon = find_item_by_name_in_collection(item[:item], coupons)
@@ -63,15 +59,9 @@ def apply_coupons(cart, coupons)
       item[:count] = num_not_in_coupon  
         
       coupon_updates.push(items_with_coupon)
-      print "item"
-      pp item
-      print "item with coupon"
-      pp items_with_coupon
     end
   end
   cart += coupon_updates
-  print "cart after updates: "
-  pp cart
   cart
 end
 
