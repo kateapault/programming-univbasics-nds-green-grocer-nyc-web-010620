@@ -85,7 +85,11 @@ def checkout(cart, coupons)
   # OUTPUT: Float (cart total)
   
   consolidated_cart = consolidate_cart(cart)
+  print "consilidated cart: "
+  pp consolidated_cart
   applied_coupons = apply_coupons(consolidated_cart, coupons)
+  print "with applied coupons #{coupons}"
+  pp applied_coupons
   final_cart = apply_clearance(applied_coupons)
   
   print "final cart"
@@ -96,7 +100,6 @@ def checkout(cart, coupons)
   for item in final_cart do
     item_total = item[:price] * item[:count]
     cart_total += item_total
-    print "cart total is now: #{cart_total}"
   end
   
   if cart_total > 100
