@@ -70,6 +70,7 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  if cart[0]
   cart = consolidate_cart(cart)
   for item in cart do
     if item[:clearance]
